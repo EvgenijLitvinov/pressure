@@ -4,9 +4,9 @@ from subprocess import call
 
 with open('../pressure/flag.txt', 'r+') as fp:
     flag = fp.read()
-    if flag:
-        fp.write('\b0')
-        call('curl -O https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
+    if flag == '1':
+        fp.seek(0)
+        fp.write('0')
+        call('wget -o log https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
+        call('7z e main.zip -o* >log', shell=True)
 call('./press.py')
-
-print("Content-type: text/html\n")
