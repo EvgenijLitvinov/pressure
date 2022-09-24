@@ -1,8 +1,8 @@
 #!/bin/bash
 
 read -p "Комментарий для коммита: "
-echo ${REPLY} > asd.txt
-git commit -a -F asd.txt
-#git push
-#echo "1" > ../pressure/flag.txt
-echo \'${REPLY}\'
+echo ${REPLY} > flag.txt
+git commit -a -F flag.txt
+git push
+#echo "1" > flag.txt
+#curl -T flag.txt ftp://y95891gg:Vf4pra2a@y95891gg.beget.tech/y95891gg.beget.tech/public_html/pressure/

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 # 26.06 - arr 1
+# 23.09 - arr 2
 FILE = '/media/jack/System/Users/HATAXA/Google Диск/pressure.csv'
 data = {}
 
