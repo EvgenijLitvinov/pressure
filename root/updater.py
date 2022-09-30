@@ -17,6 +17,7 @@ if os.path.exists('../pressure/flag.txt'):
     for file in os.listdir('pressure-main/root'):
         print(os.stat(file).st_mtime)
     print(os.stat('updater.py').st_mtime)
+    print(os.stat('press.py').st_mtime)
 #call('./press.py')
 
 print('</body></html>')
