@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import filecmp
 import os
 from subprocess import call
 
@@ -12,12 +13,15 @@ print('''<!DOCTYPE HTML>
 </head><body>''')
 
 if os.path.exists('../pressure/flag.txt'):
-    call('wget -o log https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
-    call('unzip main.zip > log', shell=True)
-    for file in os.listdir('pressure-main/root'):
-        print(os.stat(file).st_mtime)
-    print(os.stat('updater.py').st_mtime)
-    print(os.stat('press.py').st_mtime)
+#    call('wget -o log https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
+#    call('unzip main.zip > log', shell=True)
+    if not filecmp.cmp('pressure-main/root/updater.py', 'updater.py', shallow=False):
+        os.replace('pressure-main/root/updater.py', 'updater.py')
+        print('<h5>update.py updated</h5>')
+    if not filecmp.cmp('pressure-main/root/press.py', 'press.py', shallow=False):
+        os.replace('pressure-main/root/press.py', 'press.py')
+        print('<h5>press.py updated</h5>')
 #call('./press.py')
+print('DONE')
 
 print('</body></html>')
