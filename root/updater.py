@@ -21,6 +21,11 @@ if os.path.exists('../pressure/flag.txt'):
         if not filecmp.cmp(zip_dir+file, file, shallow=False):
             os.replace(zip_dir+file, file)
             print(f'<h5>{file} updated</h5>')
+    zip_dir = 'pressure-main/pressure/'
+    for file in os.listdir(zip_dir):
+        if not filecmp.cmp(zip_dir+file, f'../pressure/{file}', shallow=False):
+            os.replace(zip_dir+file, f'../pressure/{file}')
+            print(f'<h5>{file} updated</h5>')            
 #call('./press.py')
 
 print('</body></html>')
