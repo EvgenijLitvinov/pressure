@@ -12,16 +12,15 @@ print('''<!DOCTYPE HTML>
     <title>Updater</title>
 </head><body>''')
 
+print('DONE')
 if os.path.exists('../pressure/flag.txt'):
 #    call('wget -o log https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
 #    call('unzip main.zip > log', shell=True)
-    if not filecmp.cmp('pressure-main/root/updater.py', 'updater.py', shallow=False):
-        os.replace('pressure-main/root/updater.py', 'updater.py')
-        print('<h5>update.py updated</h5>')
-    if not filecmp.cmp('pressure-main/root/press.py', 'press.py', shallow=False):
-        os.replace('pressure-main/root/press.py', 'press.py')
-        print('<h5>press.py updated</h5>')
+    zip_dir = 'pressure-main/root/'
+    for file in os.listdir(zip_dir):
+        if not filecmp.cmp(zip_dir+file, file, shallow=False):
+            os.replace(zip_dir+file, file)
+            print(f'<h5>{file} updated</h5>')
 #call('./press.py')
-print('DONE')
 
 print('</body></html>')
