@@ -13,7 +13,6 @@ print('''<!DOCTYPE HTML>
     <title>Updater</title>
 </head><body>''')
 
-print('BEGIN')
 if os.path.exists('../pressure/flag.txt'):
     call('wget -o log https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
     call('unzip main.zip > log', shell=True)
