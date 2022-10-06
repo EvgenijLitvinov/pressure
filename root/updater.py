@@ -11,8 +11,8 @@ print('''<!DOCTYPE HTML>
 <head>
     <meta charset="utf-8">
     <title>Updater</title>
+    <link rel="shortcut icon" href="../pressure/favicon.ico" type="image/x-icon">
 </head><body>''')
-print('<h1>Please Wait!</h1>')
 
 if os.path.exists('../pressure/flag.txt'):
     call('wget -o log https://github.com/EvgenijLitvinov/pressure/archive/refs/heads/main.zip', shell=True)
