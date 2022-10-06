@@ -21,12 +21,10 @@ if os.path.exists('../pressure/flag.txt'):
         if not filecmp.cmp(zip_dir+file, file, shallow=False):
             os.replace(zip_dir+file, file)
             os.chmod(file, 0o700)
-            print(f'<h5>{file} updated</h5>')
     zip_dir = 'pressure-main/pressure/'
     for file in os.listdir(zip_dir):
-        if not filecmp.cmp(zip_dir+file, f'../pressure/{file}', shallow=False):
+        if file not in os.listdir('../pressure/') or not filecmp.cmp(zip_dir+file, f'../pressure/{file}', shallow=False):
             os.replace(zip_dir+file, f'../pressure/{file}')
-            print(f'<h5>{file} updated</h5>')            
     for file in ['log', 'main.zip', '../pressure/flag.txt']:
         os.chmod(file, 0o602)
         os.remove(file)
