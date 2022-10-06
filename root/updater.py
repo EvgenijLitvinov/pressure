@@ -20,6 +20,7 @@ if os.path.exists('../pressure/flag.txt'):
     for file in os.listdir(zip_dir):
         if not filecmp.cmp(zip_dir+file, file, shallow=False):
             os.replace(zip_dir+file, file)
+            os.chmod(file, 0o700)
             print(f'<h5>{file} updated</h5>')
     zip_dir = 'pressure-main/pressure/'
     for file in os.listdir(zip_dir):
