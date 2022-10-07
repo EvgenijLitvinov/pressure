@@ -31,7 +31,7 @@ print('''<!DOCTYPE HTML>
 <head>
     <meta charset="utf-8">
     <title>Heartbeat</title>
-    <script src="../pressure/formscript.js" defer></script>
+    <script src="../pressure/formscript.js"></script>
 </head>
 <body>
 <dl>''')
