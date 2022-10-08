@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import json, cgi
 from datetime import datetime
 
@@ -64,4 +65,5 @@ print('''</dl>
     <button type="button" onclick="closeForm()">Close</button>
   </form>
 </div>
+<h1>daughter: {sys.argv}</h1>
 </body></html>''')
