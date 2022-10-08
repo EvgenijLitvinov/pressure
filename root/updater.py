@@ -5,7 +5,6 @@ import filecmp
 import os
 from subprocess import call
 
-print("Content-type: text/html\n")
 print('''<!DOCTYPE HTML>
 <html>
 <head>
@@ -31,5 +30,6 @@ if os.path.exists('../pressure/flag.txt'):
         os.remove(file)
     shutil.rmtree('pressure-main', ignore_errors=True)
 
+print(f'<h1>{os.getpgid()}</h1>')
 print('</body></html>')
 call('./press.py')
