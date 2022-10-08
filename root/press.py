@@ -67,5 +67,4 @@ print(f'''</dl>
     <button type="button" onclick="closeForm()">Close</button>
   </form>
 </div>
-<h1>daughter: {sys.argv}</h1>
 </body></html>''')
