@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
-import sys
+import sys, os
 import json, cgi
 from datetime import datetime
+
+os.kill(int(sys.argv[1]))
 
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
@@ -40,7 +42,7 @@ for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
         print(f'<dd>{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</dd>')
-print('''</dl>
+print(f'''</dl>
 <button onclick="openForm()">Add</button>
 <div id="myForm">
   <form>

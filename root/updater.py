@@ -32,4 +32,4 @@ if os.path.exists('../pressure/flag.txt'):
 
 print(f'<h1>parent: {os.getpid()}</h1>')
 print('</body></html>')
-call('./press.py')
+call(f'./press.py {os.getpid()}', shell=True)
