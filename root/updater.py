@@ -30,6 +30,5 @@ if os.path.exists('../pressure/flag.txt'):
         os.remove(file)
     shutil.rmtree('pressure-main', ignore_errors=True)
 
-print(f'<h1>parent: {os.getpid()}</h1>')
 print('</body></html>')
 call(f'./press.py {os.getpid()}', shell=True)

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import sys, os
+import sys, os, signal
 import json, cgi
 from datetime import datetime
 
-os.kill(int(sys.argv[1]))
+os.kill(int(sys.argv[1]), signal.SIGTERM)
 
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
