@@ -34,6 +34,7 @@ print('''<!DOCTYPE HTML>
 <head>
     <meta charset="utf-8">
     <title>Heartbeat</title>
+    <link rel="stylesheet" href="pressure/styles.css"/>
     <link rel="shortcut icon" href="../pressure/favicon.ico" type="image/x-icon">
     <script src="../pressure/formscript.js" defer></script>
 </head>
