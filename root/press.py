@@ -27,6 +27,8 @@ if form:
 
     with open('../pressure/data.json', 'w') as fp:
         json.dump(data, fp, indent=4)
+    
+    form.clear()
 
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
