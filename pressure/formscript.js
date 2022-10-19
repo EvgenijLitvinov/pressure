@@ -6,6 +6,4 @@ function closeForm() {
     document.getElementById('myForm').style.display = 'none';
 }
 
-window.onload=function(){
-    window.scrollTo(0,document.body.scrollHeight);
-}
+window.scrollTo(0,document.body.scrollHeight);

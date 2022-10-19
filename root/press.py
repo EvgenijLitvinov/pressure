@@ -4,7 +4,8 @@ import sys, os, signal
 import json, cgi
 from datetime import datetime
 
-os.kill(int(sys.argv[1]), signal.SIGTERM)
+if sys.argv[1]:
+    os.kill(int(sys.argv[1]), signal.SIGTERM)
 
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
@@ -34,8 +35,10 @@ print('''<!DOCTYPE HTML>
 <head>
     <meta charset="utf-8">
     <title>Heartbeat</title>
-    <link rel="stylesheet" href="../pressure/styles.css"/>
     <link rel="shortcut icon" href="../pressure/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../pressure/styles.css"/>
+    <link rel="stylesheet" href="../pressure/bootstrap.min.css"/>
+    <script src="../pressure/bootstrap.bundle.min.js" defer></script>
     <script src="../pressure/formscript.js" defer></script>
 </head>
 <body>
@@ -45,28 +48,45 @@ for d in  data:
     for dd in data[d]:
         print(f'<dd>{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</dd>')
 print(f'''</dl>
-<button onclick="openForm()">Add</button>
-<div id="myForm" class="popup">
-  <form>
-    <h1>Enter</h1>
-
-    <label for="date"><b>Date</b></label>
-    <input type="date" name="date" required>
-
-    <label for="sys"><b>SYS</b></label>
-    <input type="number" placeholder="120" name="sys" required>
-
-    <label for="dia"><b>DIA</b></label>
-    <input type="number" placeholder="80" name="dia" required>
-
-    <label for="pul"><b>Pulse</b></label>
-    <input type="number" placeholder="60" name="pul" required>
-
-    <label for="arr"><b>Arrhythmia</b></label>
-    <input type="checkbox" name="arr">    
-
-    <button type="submit">Add again</button>
-    <button type="button" onclick="closeForm()">Close</button>
-  </form>
+<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
+    ADDITION
+</button>
+<div class="modal fade" id="popup"><form>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="form-floating">
+                <input type="date" class="form-control" name="date" placeholder="Date" required>
+                <label for="date">Date</label>
+            </div>
+            <button class="btn-close mb-4" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="d-flex justify-content-around mb-3">
+                <div class="form-floating w-25">
+                    <input type="number" class="form-control" name="sys" placeholder="120" required>
+                    <label for="sys">SYS</label>
+                </div>
+                <div class="form-floating w-25">
+                    <input type="number" class="form-control" name="dia" placeholder="80" required>
+                    <label for="dia">DIA</label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-around">
+                <div class="form-floating w-25">
+                    <input type="number" class="form-control" name="pul" placeholder="60" required>
+                    <label for="pul">Pulse</label>
+                </div>
+                <div class="form-check mt-4">
+                    <input class="form-check-input" type="checkbox" id="arr" name="arr">
+                    <label class="form-check-label" for="arr">Arrhythmia</label>
+                    </div>                          
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
 </div>
+</form></div>
 </body></html>''')
