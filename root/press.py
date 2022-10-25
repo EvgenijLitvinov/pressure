@@ -28,20 +28,18 @@ if form:
     with open('../pressure/data.json', 'w') as fp:
         json.dump(data, fp, indent=4)
     
-    form.clear()
-
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
 print('''<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Heartbeat</title>
     <link rel="shortcut icon" href="../pressure/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../pressure/styles.css"/>
     <link rel="stylesheet" href="../pressure/bootstrap.min.css"/>
     <script src="../pressure/bootstrap.bundle.min.js" defer></script>
-    <script src="../pressure/formscript.js" defer></script>
 </head>
 <body>
 <dl>''')
@@ -49,6 +47,7 @@ for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
         print(f'<dd>{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</dd>')
+    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print(f'''</dl>
 <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
     ADDITION
@@ -91,4 +90,5 @@ print(f'''</dl>
     </div>
 </div>
 </form></div>
+<script>window.scrollTo(0,document.body.scrollHeight);</script>
 </body></html>''')
