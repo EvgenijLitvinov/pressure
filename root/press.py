@@ -46,14 +46,32 @@ print('''<!DOCTYPE HTML>
 for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
-        print(f'<dd>{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</dd>')
-    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
-print(f'''</dl>
-<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
+        print(f'''<dd class="btn-group dropend">
+        <button class="btn btn-danger">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+        <button class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="modal" data-bs-target="#del">
+        </button></dd>''')
+    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script></dl>')
+# --------------------------- delete modal -----------------------------------
+print(f'''<div class="modal fade" id="del">
+        <div class="modal-dialog modal-dialog-centered modal-sm"><form>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary" name="yes" value="123">Yes</button>
+                </div>
+            </div>
+        </form></div></div>''')
+# ------------------------ form modal witn button -------------------------------
+print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
     ADDITION
 </button>
-<div class="modal fade" id="popup"><form>
-<div class="modal-dialog">
+<div class="modal fade" id="popup">
+<div class="modal-dialog modal-sm"><form method="post">
     <div class="modal-content">
         <div class="modal-header">
             <div class="form-floating">
@@ -64,17 +82,17 @@ print(f'''</dl>
         </div>
         <div class="modal-body">
             <div class="d-flex justify-content-around mb-3">
-                <div class="form-floating w-25">
+                <div class="form-floating m-3">
                     <input type="number" class="form-control" name="sys" placeholder="120" required>
                     <label for="sys">SYS</label>
                 </div>
-                <div class="form-floating w-25">
+                <div class="form-floating m-3">
                     <input type="number" class="form-control" name="dia" placeholder="80" required>
                     <label for="dia">DIA</label>
                 </div>
             </div>
             <div class="d-flex justify-content-around">
-                <div class="form-floating w-25">
+                <div class="form-floating m-3">
                     <input type="number" class="form-control" name="pul" placeholder="60" required>
                     <label for="pul">Pulse</label>
                 </div>
@@ -88,7 +106,6 @@ print(f'''</dl>
             <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
     </div>
-</div>
-</form></div>
+</form></div></div>
 <script>window.scrollTo(0,document.body.scrollHeight);</script>
 </body></html>''')
