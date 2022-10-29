@@ -11,7 +11,7 @@ with open('../pressure/data.json') as fp:
     data = json.load(fp)
 
 form = cgi.FieldStorage()
-if form:
+if form.getfirst('date'):
     date = datetime.strptime(form.getfirst('date'), '%Y-%m-%d')
     date = date.strftime('%d.%m.%y')
 
