@@ -51,7 +51,8 @@ for d in  data:
         <button class="btn btn-danger dropdown-toggle dropdown-toggle-split"
             data-bs-toggle="modal" data-bs-target="#del">
         </button></dd>''')
-    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script></dl>')
+    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
+print('</dl>')
 # --------------------------- delete modal -----------------------------------
 print(f'''<div class="modal fade" id="del">
         <div class="modal-dialog modal-dialog-centered modal-sm"><form>
