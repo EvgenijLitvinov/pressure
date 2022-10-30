@@ -46,27 +46,9 @@ print('''<!DOCTYPE HTML>
 for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
-        print(f'''<dd class="btn-group dropend">
-        <button class="btn btn-danger">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
-        <button class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-            data-bs-toggle="modal" data-bs-target="#del">
-        </button></dd>''')
+        print(f'<dd>{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</dd>')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
-# --------------------------- delete modal -----------------------------------
-print(f'''<div class="modal fade" id="del">
-        <div class="modal-dialog modal-dialog-centered modal-sm"><form>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Delete?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="submit" class="btn btn-primary" name="yes" value="123">Yes</button>
-                </div>
-            </div>
-        </form></div></div>''')
 # ------------------------ form modal witn button -------------------------------
 print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
     ADDITION
