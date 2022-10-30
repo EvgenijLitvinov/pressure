@@ -46,7 +46,9 @@ print('''<!DOCTYPE HTML>
 for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
-        print(f'<dd>{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</dd>')
+        print(f'''<dd>
+            <button type="submit" name="yes" value="{d}">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+            </dd>''')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
 # ------------------------ form modal witn button -------------------------------
