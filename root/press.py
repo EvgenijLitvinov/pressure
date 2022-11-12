@@ -47,13 +47,13 @@ print('''<!DOCTYPE HTML>
 for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
-        print(f'''<dd><form>
+        print(f'''<dd>
             <button onclick="openDel({d})">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
-            </form></dd>''')
+            </dd>''')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
 # ------------------------- myDel ---------------------------------------
-print('''
+print(f'''
     <div id="myDel">
         <form>
             <h3>Delete?</h3>
