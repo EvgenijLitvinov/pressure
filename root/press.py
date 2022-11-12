@@ -40,7 +40,7 @@ print('''<!DOCTYPE HTML>
     <link rel="stylesheet" href="../pressure/styles.css"/>
     <link rel="stylesheet" href="../pressure/bootstrap.min.css"/>
     <script src="../pressure/bootstrap.bundle.min.js" defer></script>
-    <script src="pressure/scripts.js" defer></script>
+    <script src="../pressure/scripts.js" defer></script>
 </head>
 <body>
 <dl>''')
