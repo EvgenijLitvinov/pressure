@@ -47,10 +47,19 @@ for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
         print(f'''<dd><form>
-            <button type="submit" name="yes" value="{d}">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+            <button onclick="openDel({d})">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </form></dd>''')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
+# ------------------------- myDel ---------------------------------------
+print('''
+    <div id="myDel">
+        <form>
+            <h3>Delete?</h3>
+            <button id="delBut" type="submit">Yes</button>
+            <button type="button" onclick="closeDel()">No</button>
+        </form>
+    </div>''')
 # ------------------------ form modal witn button -------------------------------
 print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
     ADDITION
