@@ -48,13 +48,13 @@ for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
         print(f'''<dd>
-            <button onclick="openDel({d})">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+            <button onclick="openDel({data[d].index(dd)})">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </dd>''')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''
-    <div id="myDel">
+    <div id="myDel" style="display:none;">
         <form>
             <h3>Delete?</h3>
             <button id="delBut" type="submit">Yes</button>
