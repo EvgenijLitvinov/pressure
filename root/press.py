@@ -47,7 +47,7 @@ print('''<!DOCTYPE HTML>
 for d in  data:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
-        ddt = ''.join([d, data[d].index(dd)])
+        ddt = ''.join([d, str(data[d].index(dd))])
         print(f'''<dd>
             <button onclick="openDel({ddt})">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </dd>''')
