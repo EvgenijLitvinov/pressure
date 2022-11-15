@@ -7,6 +7,10 @@ from datetime import datetime
 if sys.argv[1]:
     os.kill(int(sys.argv[1]), signal.SIGTERM)
 
+def bg_c(sys, dia):
+    # DarkRed Red IndianRed Yellow/Gold Green/Lime
+    pass
+
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
 
@@ -27,7 +31,15 @@ if form.getfirst('date'):
 
     with open('../pressure/data.json', 'w') as fp:
         json.dump(data, fp, indent=4)
-    
+
+if form.getfirst('del'):
+    del_d = form.getfirst('del')[:-1]
+    del_n = int(form.getfirst('del')[-1])
+    data[del_d].pop(del_n)
+
+    with open('../pressure/data.json', 'w') as fp:
+        json.dump(data, fp, indent=4)
+
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
 print('''<!DOCTYPE HTML>
