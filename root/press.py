@@ -67,7 +67,7 @@ for d in  data:
 print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''
-    <div id="myDel" style="display:none;">
+    <div id="myDel">
         <form>
             <h3>Delete?</h3>
             <button id="delBut" type="submit">Yes</button>
