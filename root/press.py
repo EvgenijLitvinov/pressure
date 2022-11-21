@@ -7,9 +7,18 @@ from datetime import datetime
 if sys.argv[1]:
     os.kill(int(sys.argv[1]), signal.SIGTERM)
 
-def bg_c(sys, dia):
-    # DarkRed Red IndianRed Yellow/Gold Green/Lime
-    pass
+def bg_c(s, d):
+    if s >= 180 or d >= 110:
+        return 'DarkRed'
+    if s >= 160 or d >= 100:
+        return 'Red'
+    if s >= 140 or d >= 90:
+        return 'Salmon'
+    if s >= 130 or d >= 85:
+        return 'Orange'
+    if s >= 120 or d >= 80:
+        return 'Green'
+    return 'Lime'
 
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
@@ -64,7 +73,7 @@ for d in  data:
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
         print(f'''<dd>
-            <button class="btn shadow" style="color: red;" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+            <button class="btn shadow" style="color: {bg_c};" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </dd>''')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
