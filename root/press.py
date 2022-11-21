@@ -73,7 +73,7 @@ for d in  data:
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
         print(f'''<dd>
-            <button class="btn shadow" style="color: {bg_c(dd["sys"], dd["sys"])};" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+            <button class="btn shadow" style="color: {bg_c(int(dd["sys"]), int(dd["sys"]))};" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </dd>''')
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
