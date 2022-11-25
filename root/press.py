@@ -80,7 +80,7 @@ print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''
     <div id="myDel">
-        <form>
+        <form method="post">
             <h3>Delete?</h3>
             <button id="delBut" type="submit">Yes</button>
             <button type="button" onclick="closeDel()">No</button>
