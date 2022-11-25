@@ -95,7 +95,7 @@ print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-
     <div class="modal-content">
         <div class="modal-header">
             <div class="form-floating">
-                <input type="date" class="form-control" name="date" placeholder="Date" required>
+                <input type="date" class="form-control" name="date" placeholder="Date" value={datetime.now().strftime('%Y-%m-%d')} required>
                 <label for="date">Date</label>
             </div>
             <button class="btn-close mb-4" data-bs-dismiss="modal"></button>
