@@ -80,10 +80,12 @@ print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''
     <div id="myDel">
-        <form method="post">
+        <form method="post" class="container">
             <h3>Delete?</h3>
-            <button id="delBut" type="submit">Yes</button>
-            <button type="button" onclick="closeDel()">No</button>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-outline-dark" id="delBut">Yes</button>
+                <button type="button" class="btn btn-outline-dark" onclick="closeDel()">No</button>
+            </div>
         </form>
     </div>''')
 # ------------------------ form modal witn button -------------------------------
