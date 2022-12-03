@@ -106,7 +106,7 @@ print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-
         <div class="modal-body">
             <div class="d-flex justify-content-around mb-3">
                 <div class="form-floating m-3">
-                    <input type="number" class="form-control" name="sys" placeholder="120" required>
+                    <input id="myInput" type="number" class="form-control" name="sys" placeholder="120" required>
                     <label for="sys">SYS</label>
                 </div>
                 <div class="form-floating m-3">
