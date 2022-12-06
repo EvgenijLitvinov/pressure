@@ -52,6 +52,12 @@ if form.getfirst('del'):
     with open('../pressure/data.json', 'w') as fp:
         json.dump(data, fp, indent=4)
 
+# ------------------- last10 ---------------
+#last10 = {}
+#for key in list(data.keys())[-10:]:
+#    last10[key] = data[key]
+
+
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
 print('''<!DOCTYPE HTML>
@@ -68,7 +74,7 @@ print('''<!DOCTYPE HTML>
 </head>
 <body>
 <dl>''')
-for d in  data:
+for d in  list(data.keys())[-10:]:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
