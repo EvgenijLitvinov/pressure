@@ -7,13 +7,13 @@ function openDel(data) {
 function closeDel() {
     document.getElementById("myDel").style.display = "none";
 }
-
+/*
 window.onscroll = function() {
     if (window.scrollY <= window.innerHeight /4) {
         location.reload();
     }
 }
-
+*/
 const myModal = document.getElementById('popup')
 const myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', () => {
