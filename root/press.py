@@ -3,6 +3,7 @@
 import sys, os, signal
 import json, cgi
 from datetime import datetime, timedelta
+from time import time
 
 if sys.argv[1]:
     os.kill(int(sys.argv[1]), signal.SIGTERM)
@@ -60,17 +61,17 @@ if form.getfirst('del'):
 
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
-print('''<!DOCTYPE HTML>
+print(f'''<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Heartbeat</title>
     <link rel="shortcut icon" href="../pressure/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../pressure/styles.css"/>
+    <link rel="stylesheet" href="../pressure/styles.css?{int(time())}"/>
     <link rel="stylesheet" href="../pressure/bootstrap.min.css"/>
     <script src="../pressure/bootstrap.bundle.min.js" defer></script>
-    <script src="../pressure/scripts.js" defer></script>
+    <script src="../pressure/scripts.js?{int(time())}" defer></script>
 </head>
 <body>
 <dl>''')
