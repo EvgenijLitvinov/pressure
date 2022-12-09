@@ -19,3 +19,6 @@ const myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', () => {
     myInput.focus()
 })
+
+let params = (new URL(document.location)).searchParams;
+console.log(params.get("date"));
