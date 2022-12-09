@@ -17,3 +17,9 @@ body {
     padding-top: 13px;
     text-align: center;
 }
+
+.add10 {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}

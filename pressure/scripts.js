@@ -20,5 +20,8 @@ myModal.addEventListener('shown.bs.modal', () => {
     myInput.focus()
 })
 
-let params = (new URL(document.location)).searchParams;
-console.log(params.get("date"));
+function more10() {
+    let params = (new URL(document.location)).searchParams;
+    params.set("more", "1");
+    location.reload();
+}
