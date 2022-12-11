@@ -74,8 +74,12 @@ print(f'''<!DOCTYPE HTML>
     <script src="../pressure/scripts.js?{int(time())}" defer></script>
 </head>
 <body>
-<button class="btn btn-light add10" onclick="more10()">MORE 10</button>
-<dl>''')
+<button class="btn btn-light add10" onclick="more10()">MORE 10</button>''')
+if form.getfirst('more'):
+    print(f'<h2>more: {form.getfirst("more")}</h2>')
+else:
+    print('<h2>no</h2>')
+print('<dl>')
 for d in  list(data.keys())[-10:]:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
