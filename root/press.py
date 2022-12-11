@@ -75,10 +75,7 @@ print(f'''<!DOCTYPE HTML>
 </head>
 <body>
 <button class="btn btn-light add10" onclick="more10()">MORE 10</button>''')
-if form.getfirst('more'):
-    print(f'<h2>more: {form.getfirst("more")}</h2>')
-else:
-    print('<h2>no</h2>')
+print(f'<h2>more: {form}</h2>')
 print('<dl>')
 for d in  list(data.keys())[-10:]:
     print(f'<dt>{d}:</dt>')
