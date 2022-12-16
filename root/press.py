@@ -70,15 +70,15 @@ print(f'''<!DOCTYPE HTML>
     <script src="../pressure/bootstrap.bundle.min.js" defer></script>
     <script src="../pressure/scripts.js?{int(time())}" defer></script>
 </head>
-<body>
-<form>
+<body>''')
+# -------------------- more10 --------------------
+print(f'''<form method="post">
 <button type="submit"
         class="btn btn-light add10"
         name="more" value={more10 - 10}>
     MORE 10
-</button>
-</form>''')
-print(f'<h2>more: {form}</h2>')
+</button></form>''')
+# ------------------------------------------------
 print('<dl>')
 for d in  list(data.keys())[more10:]:
     print(f'<dt>{d}:</dt>')
@@ -87,7 +87,7 @@ for d in  list(data.keys())[more10:]:
         print(f'''<dd>
             <button class="btn shadow" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </dd>''')
-    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
+print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''

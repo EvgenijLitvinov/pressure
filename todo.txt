@@ -1,5 +1,5 @@
 favicon
 scroll
-out chunk of data
+out of range of data
 beautiful colours
 time zone
