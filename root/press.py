@@ -54,7 +54,7 @@ if form.getfirst('del'):
         json.dump(data, fp, indent=4)
 
 # ------------------- last10 ---------------
-more10 = form.getfirst("more") if form.getfirst("more") else -10
+more10 = int(form.getfirst("more")) if form.getfirst("more") else -10
 
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
