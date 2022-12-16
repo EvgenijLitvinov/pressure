@@ -87,7 +87,8 @@ for d in  list(data.keys())[more10:]:
         print(f'''<dd>
             <button class="btn shadow" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
             </dd>''')
-print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
+if not form.getfirst("more"):
+    print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''
@@ -141,6 +142,7 @@ print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-
             <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
     </div>
-</form></div></div>
-<script>window.scrollTo(0,document.body.scrollHeight);</script>
-</body></html>''')
+</form></div></div>''')
+if not form.getfirst("more"):
+    print('<script>window.scrollTo(0,document.body.scrollHeight);</script>')
+print('</body></html>')
