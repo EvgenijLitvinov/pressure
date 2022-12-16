@@ -54,10 +54,7 @@ if form.getfirst('del'):
         json.dump(data, fp, indent=4)
 
 # ------------------- last10 ---------------
-#last10 = {}
-#for key in list(data.keys())[-10:]:
-#    last10[key] = data[key]
-
+more10 = form.getfirst("more") if form.getfirst("more") else -10
 
 # ------------------ rendering ------------
 print("Content-type: text/html\n")
@@ -74,10 +71,16 @@ print(f'''<!DOCTYPE HTML>
     <script src="../pressure/scripts.js?{int(time())}" defer></script>
 </head>
 <body>
-<button class="btn btn-light add10" onclick="more10()">MORE 10</button>''')
+<form>
+<button type="submit"
+        class="btn btn-light add10"
+        name="more" value={more10 - 10}>
+    MORE 10
+</button>
+</form>''')
 print(f'<h2>more: {form}</h2>')
 print('<dl>')
-for d in  list(data.keys())[-10:]:
+for d in  list(data.keys())[more10:]:
     print(f'<dt>{d}:</dt>')
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))

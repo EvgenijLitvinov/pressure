@@ -13,9 +13,3 @@ const myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', () => {
     myInput.focus()
 })
-
-function more10() {
-    let params = (new URL(document.location)).searchParams;
-    params.set("more", "1");
-    location.reload();
-}
