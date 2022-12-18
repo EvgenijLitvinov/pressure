@@ -24,6 +24,8 @@ def bg_c(s, d):
 def artm(arr):
     if arr:
         return '<img src="../pressure/artm.png" height="30" width="30">'
+    else:
+        return ''
 
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
