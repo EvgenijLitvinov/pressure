@@ -1,5 +1,8 @@
 body {
     padding: 5px;
+    background-image: url('../pressure/fon.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
 #myDel {

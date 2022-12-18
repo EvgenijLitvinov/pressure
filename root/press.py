@@ -21,6 +21,10 @@ def bg_c(s, d):
         return 'Green'
     return 'Lime'
 
+def artm(arr):
+    if arr:
+        return '<img src="../pressure/artm.png" height="30" width="30">'
+
 with open('../pressure/data.json') as fp:
     data = json.load(fp)
 
@@ -76,7 +80,7 @@ print(f'''<form method="post">
 <button type="submit"
         class="btn btn-light add10"
         name="more" value={more10 - 10}>
-    MORE 10
+    ЕЩЕ 10
 </button></form>''')
 # ------------------------------------------------
 print('<dl>')
@@ -85,7 +89,10 @@ for d in  list(data.keys())[more10:]:
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
         print(f'''<dd>
-            <button class="btn shadow" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};" onclick="openDel(\'{ddt}\')">{dd["sys"]} / {dd["dia"]} - {dd["pul"]}  {dd["arr"]}</button>
+            <button class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
+                    onclick="openDel(\'{ddt}\')">
+                    {dd["sys"]} / {dd["dia"]} &ensp; Пульс {dd["pul"]} &ensp;
+                    {artm(dd["arr"])}</button>
             </dd>''')
 if not form.getfirst("more"):
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
@@ -94,7 +101,7 @@ print('</dl>')
 print(f'''
     <div id="myDel">
         <form method="post">
-            <h3>Delete?</h3>
+            <h3>Удалить?</h3>
             <div class="btn-group">
                 <button type="submit" class="btn btn-outline-dark" id="delBut">Yes</button>
                 <button type="button" class="btn btn-outline-dark" onclick="closeDel()">No</button>
@@ -103,8 +110,10 @@ print(f'''
     </div>''')
 # ------------------------ form modal witn button -------------------------------
 ua_time = datetime.utcnow() + timedelta(hours=2)
-print(f'''<button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#popup">
-    ADDITION
+print(f'''<button class="btn btn-success btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#popup">
+    ДОБАВИТЬ
 </button>
 <div class="modal fade" id="popup">
 <div class="modal-dialog modal-sm"><form method="post">
