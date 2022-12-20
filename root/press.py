@@ -79,10 +79,9 @@ print(f'''<!DOCTYPE HTML>
 <body>''')
 # -------------------- more10 --------------------
 print(f'''<form method="post">
-<input type="image" src="../pressure/icon.jpeg"
-        height="30" width="30"
-        name="more" value={more10 - 10}>
-</form>''')
+<button name="more" value={more10 - 10}>
+    <img src="../pressure/icon.jpeg" height="30" width="30">
+</button></form>''')
 # ------------------------------------------------
 print('<dl>')
 for d in  list(data.keys())[more10:]:
