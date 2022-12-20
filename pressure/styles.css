@@ -21,8 +21,14 @@ body {
     text-align: center;
 }
 
-.add10 {
-    position: fixed;
+input[type="image"] {
+    position: absolute;
     top: 20px;
     right: 20px;
+}
+
+.Add {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
 }
