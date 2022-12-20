@@ -26,8 +26,7 @@ button[name="more"] {
     top: 20px;
     right: 20px;
     background-color: black;
-    color: gray;
-    border-radius: 5px;
+    border: 0;
 }
 
 .Add {
