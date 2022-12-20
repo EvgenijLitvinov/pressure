@@ -79,7 +79,7 @@ print(f'''<!DOCTYPE HTML>
 <body>''')
 # -------------------- more10 --------------------
 print(f'''<form method="post">
-<button name="more" value={more10 - 10}
+<button name="more" value={more10 - 10}>
     <img src="../pressure/icon.jpeg" height="30" width="30">
 </button></form>''')
 # ------------------------------------------------
