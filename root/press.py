@@ -112,7 +112,7 @@ print(f'''
 # ------------------------ form modal witn button -------------------------------
 ua_time = datetime.utcnow() + timedelta(hours=2)
 print(f'''<a class="Add" href="#" data-bs-toggle="modal" data-bs-target="#popup">
-        <img src="pressure/plus.png" height="100" width="100">
+        <img src="../pressure/plus.png" height="100" width="100">
         </a>
 <div class="modal fade" id="popup">
 <div class="modal-dialog modal-sm"><form method="post">
