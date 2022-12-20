@@ -21,10 +21,13 @@ body {
     text-align: center;
 }
 
-input[type="image"] {
+button[name="more"] {
     position: absolute;
     top: 20px;
     right: 20px;
+    background-color: black;
+    color: gray;
+    border-radius: 5px;
 }
 
 .Add {
