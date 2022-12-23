@@ -86,11 +86,10 @@ print(f'''<form method="post">
 for d in  list(data.keys())[more10:]:
     print(f'''<div class="card text-bg-dark">
                 <div class="card-header fw-bold">{d}</div>
-                <div class="card-body">''')
+                <div class="card-body ps-3">''')
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
-        print(f'''&ensp;&ensp;
-                    <a class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
+        print(f'''<a class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
                     onclick="openDel(\'{ddt}\')">
                     {dd["sys"]} / {dd["dia"]} &ensp; Пульс {dd["pul"]} &ensp;
                     &ensp; {artm(dd["arr"])}</a>''')
