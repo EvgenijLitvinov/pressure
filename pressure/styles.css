@@ -34,3 +34,8 @@ button[name="more"] {
     right: 20px;
     bottom: 20px;
 }
+
+div.card {
+    width: 18rem;
+    margin: 10px;
+}

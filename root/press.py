@@ -83,20 +83,19 @@ print(f'''<form method="post">
     <img src="../pressure/icon.jpeg" height="30" width="30">
 </button></form>''')
 # ------------------------------------------------
-print('<dl>')
 for d in  list(data.keys())[more10:]:
-    print(f'<dt>{d}:</dt>')
+    print(f'''<div class="card text-bg-dark">
+                <div class="card-header fw-bold">{d}</div>
+                <div class="card-body">''')
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
-        print(f'''<dd>
-            <button class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
+        print(f'''<a class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
                     onclick="openDel(\'{ddt}\')">
                     {dd["sys"]} / {dd["dia"]} &ensp; Пульс {dd["pul"]} &ensp;
-                    {artm(dd["arr"])}</button>
-            </dd>''')
+                    {artm(dd["arr"])}</a>''')
+    print('</div></div>')
 if not form.getfirst("more"):
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
-print('</dl>')
 # ------------------------- myDel ---------------------------------------
 print(f'''
     <div id="myDel">
