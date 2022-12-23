@@ -89,10 +89,11 @@ for d in  list(data.keys())[more10:]:
                 <div class="card-body">''')
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
-        print(f'''<a class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
+        print(f'''&ensp;&ensp;
+                    <a class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
                     onclick="openDel(\'{ddt}\')">
                     {dd["sys"]} / {dd["dia"]} &ensp; Пульс {dd["pul"]} &ensp;
-                    {artm(dd["arr"])}</a>''')
+                    &ensp; {artm(dd["arr"])}</a>''')
     print('</div></div>')
 if not form.getfirst("more"):
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
@@ -109,7 +110,7 @@ print(f'''
     </div>''')
 # ------------------------ form modal witn button -------------------------------
 ua_time = datetime.utcnow() + timedelta(hours=2)
-print(f'''<a class="Add" href="#" data-bs-toggle="modal" data-bs-target="#popup">
+print(f'''<a class="Add" data-bs-toggle="modal" data-bs-target="#popup">
         <img src="../pressure/plus.png" height="100" width="100">
         </a>
 <div class="modal fade" id="popup">
