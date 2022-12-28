@@ -36,6 +36,7 @@ button[name="more"] {
 }
 
 div.card {
-    width: 18rem;
+    width: 16.5rem;
     margin: 10px;
+    border: 4px groove goldenrod;
 }
