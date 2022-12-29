@@ -40,3 +40,11 @@ div.card {
     margin: 10px;
     border: 4px groove gray;
 }
+
+div.modal-dialog {
+    width: 250px;
+}
+
+div.modal-content {
+    background-color: dimgray;
+}
