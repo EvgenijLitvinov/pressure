@@ -42,9 +42,32 @@ div.card {
 }
 
 div.modal-dialog {
-    width: 250px;
+    width: 200px;
 }
 
 div.modal-content {
-    background-color: dimgray;
+    background-color: #373737;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #a8a7a8;
+    font-size: 15px;
+    font-weight: 300;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+}
+
+input[type="number"], input[type="date"] {
+    width: 7rem;
+    padding: 0 10px;
+    height: 40px;
+    color: #bbb;
+    text-shadow: 1px 1px 1px black;
+    background: rgba(0, 0, 0, 0.16);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+}
+
+input[type="number"]:focus, input[type="date"]:focus {
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    outline: 0;
 }
