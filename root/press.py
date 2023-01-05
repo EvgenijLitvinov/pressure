@@ -116,36 +116,28 @@ print(f'''<a class="Add" data-bs-toggle="modal" data-bs-target="#popup">
 <div class="modal-dialog modal-sm"><form method="post">
     <div class="modal-content">
         <div class="modal-header">
-            <div class="form-floating">
-                <input type="date" class="form-control" name="date" placeholder="Date" value={ua_time.strftime('%Y-%m-%d')} required>
-                <label for="date">Date</label>
-            </div>
-            <button class="btn-close mb-4" data-bs-dismiss="modal"></button>
+            <input type="date" name="date" value={ua_time.strftime('%Y-%m-%d')} required>
+            <button type="button" class="btn-close mb-4" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-            <div class="d-flex justify-content-around mb-3">
-                <div class="form-floating m-3">
-                    <input id="myInput" type="number" class="form-control" name="sys" placeholder="120" required>
-                    <label for="sys">SYS</label>
-                </div>
-                <div class="form-floating m-3">
-                    <input type="number" class="form-control" name="dia" placeholder="80" required>
-                    <label for="dia">DIA</label>
-                </div>
-            </div>
-            <div class="d-flex justify-content-around">
-                <div class="form-floating m-3">
-                    <input type="number" class="form-control" name="pul" placeholder="60" required>
-                    <label for="pul">Pulse</label>
-                </div>
-                <div class="form-check mt-4">
-                    <input class="form-check-input" type="checkbox" id="arr" name="arr">
-                    <label class="form-check-label" for="arr">Arrhythmia</label>
-                    </div>                          
-            </div>
+            <label for="myInput">Давление:</label>
+            <p>
+                <input id="myInput" type="number" name="sys" placeholder="120" required>
+            </p>
+            <p>
+                <input type="number" name="dia" placeholder="80" required>
+            </p>
+            <label for="pul">Пульс:</label>
+            <p>
+                <input type="number" name="pul" id="pul" placeholder="60" required>
+            </p>
+            <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox" id="arr" name="arr">
+                <label class="form-check-label" for="arr">Аритмия</label>
+            </div>                          
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-secondary">Сохранить</button>
         </div>
     </div>
 </form></div></div>''')
