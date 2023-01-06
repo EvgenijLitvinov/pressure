@@ -99,12 +99,9 @@ if not form.getfirst("more"):
 # ------------------------- myDel ---------------------------------------
 print(f'''
     <div id="myDel">
-        <form method="post">
-            <h3>Удалить?</h3>
-            <div class="btn-group">
-                <button type="submit" class="btn btn-outline-dark" id="delBut">Yes</button>
-                <button type="button" class="btn btn-outline-dark" onclick="closeDel()">No</button>
-            </div>
+        <form>
+            <button type="submit" class="btn btn-danger btn-lg mb-2" id="delBut">Удалить?</button>
+            <button type="button" class="btn btn-outline-dark" onclick="closeDel()">Нет</button>
         </form>
     </div>''')
 # ------------------------ form modal witn button -------------------------------
