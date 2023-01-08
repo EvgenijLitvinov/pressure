@@ -7,7 +7,7 @@ body {
 
 @media (orientation: landscape) {
     #myDel {
-        width: 150px;
+        width: 130px;
         height: 120px;
         display: none;
         position: fixed;
@@ -22,11 +22,12 @@ body {
 
 @media (orientation: portrait) {
     #myDel {
-        width: 150px;
+        width: 130px;
         height: 120px;
         display: none;
         position: fixed;
-        right: 2;
+        top: 50%;
+        right: 0;
         text-align: center;
     }
 }

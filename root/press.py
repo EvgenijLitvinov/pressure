@@ -100,7 +100,7 @@ if not form.getfirst("more"):
 print(f'''
     <div id="myDel">
         <form>
-            <button type="submit" class="btn btn-danger btn-lg mb-2" id="delBut">Удалить?</button>
+            <button type="submit" class="btn btn-danger btn-lg mb-2" id="delBut">Удалить</button>
             <button type="button" class="btn btn-dark" onclick="closeDel()">Нет</button>
         </form>
     </div>''')
