@@ -5,7 +5,7 @@ body {
     background-attachment: fixed;
 }
 
-@media screen {
+@media (orientation: landscape) {
     #myDel {
         width: 150px;
         height: 120px;
