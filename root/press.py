@@ -68,7 +68,7 @@ print(f'''<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Heartbeat</title>
     <link rel="shortcut icon" href="../pressure/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../pressure/styles.css?{int(time())}"/>
@@ -101,7 +101,7 @@ print(f'''
     <div id="myDel">
         <form>
             <button type="submit" class="btn btn-danger btn-lg mb-2" id="delBut">Удалить?</button>
-            <button type="button" class="btn btn-outline-dark" onclick="closeDel()">Нет</button>
+            <button type="button" class="btn btn-dark" onclick="closeDel()">Нет</button>
         </form>
     </div>''')
 # ------------------------ form modal witn button -------------------------------
