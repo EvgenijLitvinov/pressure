@@ -1,6 +1,5 @@
 favicon
-scroll
 out of range of data
-beautiful colours
+more beautiful colours
 time zone
 more slowly rendering more10

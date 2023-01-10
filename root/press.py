@@ -16,7 +16,7 @@ def bg_c(s, d):
     if s >= 140 or d >= 90:
         return 'IndianRed'
     if s >= 130 or d >= 85:
-        return 'Orange'
+        return 'Yellow'
     if s >= 120 or d >= 80:
         return 'Green'
     return 'Lime'

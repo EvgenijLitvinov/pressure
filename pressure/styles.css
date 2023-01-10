@@ -57,6 +57,7 @@ div.modal-dialog {
 }
 
 div.modal-content {
+    left: 50%;
     background-color: #373737;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #a8a7a8;
