@@ -1,5 +1,4 @@
 favicon
-out of range of data
-more beautiful colours
+out of range of data (more10)
 time zone
 more slowly rendering more10
