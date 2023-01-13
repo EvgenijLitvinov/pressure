@@ -54,7 +54,7 @@ if form.getfirst('del'):
     del_n = int(form.getfirst('del')[-1])       # note
     data[del_d].pop(del_n)
     if len(data[del_d]) == 0:
-        data.pop(data[del_d])
+        data.pop(del_d)
 
     with open('../pressure/data.json', 'w') as fp:
         json.dump(data, fp, indent=4)
