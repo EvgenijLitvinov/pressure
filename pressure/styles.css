@@ -52,6 +52,14 @@ div.card {
     border: 4px groove gray;
 }
 
+thead {
+    font-size: smaller;
+}
+
+tr {
+    text-align: center;
+}
+
 div.modal-dialog {
     width: 200px;
 }

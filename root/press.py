@@ -8,7 +8,8 @@ from time import time
 if sys.argv[1]:
     os.kill(int(sys.argv[1]), signal.SIGTERM)
 
-def bg_c(s, d):
+def pres_c(s, d):
+    s, d = int(s), int(d)
     if s >= 180 or d >= 110:
         return 'DarkRed'
     if s >= 160 or d >= 100:
@@ -18,6 +19,16 @@ def bg_c(s, d):
     if s >= 130 or d >= 85:
         return 'Yellow'
     if s >= 120 or d >= 80:
+        return 'Green'
+    return 'Lime'
+
+def pul_c(pp):
+    pp = int(pp)
+    if pp > 84:
+        return 'Red'
+    if pp > 70:
+        return 'Yellow'
+    if pp > 63:
         return 'Green'
     return 'Lime'
 
@@ -82,18 +93,22 @@ print(f'''<form method="post">
 <button name="more" value={more10 - 10}>
     <img src="../pressure/icon.jpeg" height="30" width="30">
 </button></form>''')
-# ------------------------------------------------
+# ---------------------- card ----------------------
 for d in  list(data.keys())[more10:]:
     print(f'''<div class="card text-bg-dark">
                 <div class="card-header fw-bold">{d}</div>
-                <div class="card-body ps-3">''')
+                <div class="card-body">
+                <table class="table table-dark table-hover table-sm mb-1">
+                <thead><tr>
+                    <th>Давление</th><th>Пульс</th><th>Аритмия</th>
+                </tr></thead><tbody>''')
     for dd in data[d]:
         ddt = d + str(data[d].index(dd))
-        print(f'''<a class="btn" style="color: {bg_c(int(dd["sys"]), int(dd["dia"]))};"
-                    onclick="openDel(\'{ddt}\')">
-                    {dd["sys"]} / {dd["dia"]} &ensp; Пульс {dd["pul"]} &ensp;
-                    &ensp; {artm(dd["arr"])}</a>''')
-    print('</div></div>')
+        print(f'''<tr onclick="openDel(\'{ddt}\')">
+                <td style="color: {pres_c(dd["sys"], dd["dia"])}">{dd["sys"]} / {dd["dia"]}</td>
+                <td style="color: {pul_c(dd["pul"])}">{dd["pul"]}</td>
+                <td>{artm(dd["arr"])}</td></tr>''')
+    print('</tbody></table></div></div>')
 if not form.getfirst("more"):
     print(f'<script>window.scrollTo(0,document.body.scrollHeight);</script>')
 # ------------------------- myDel ---------------------------------------
